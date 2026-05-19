@@ -7,20 +7,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Nunito:wght@300;400;600;700&family=Pacifico&display=swap" rel="stylesheet">
 <style>
   :root {
-    --jungle-dark: #0d2818;
-    --jungle-mid: #1a4a2e;
-    --jungle-green: #2d7a4f;
-    --leaf-bright: #4caf50;
-    --leaf-lime: #8bc34a;
-    --toucan-orange: #ff6b35;
-    --toucan-yellow: #ffd700;
-    --toucan-red: #c62828;
-    --toucan-blue: #1565c0;
-    --sand: #f5e6c8;
-    --cream: #fdf6e3;
-    --gold: #d4a017;
-    --text-light: #f5f0e8;
-    --text-muted: #a8c5a0;
+    --jungle-dark: #0c3d6e;
+    --jungle-mid: #1a6ba8;
+    --jungle-green: #38bdf8;
+    --leaf-bright: #7dd3fc;
+    --leaf-lime: #fde047;
+    --toucan-orange: #fbbf24;
+    --toucan-yellow: #fde047;
+    --toucan-red: #0f4c81;
+    --toucan-blue: #0284c7;
+    --sand: #ffffff;
+    --cream: #f0f9ff;
+    --gold: #fbbf24;
+    --text-light: #ffffff;
+    --text-muted: #bae6fd;
+    --text-dark: #0a1628;
+    --sky-pale: #e0f2fe;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -232,14 +234,14 @@
     align-items: center;
     justify-content: space-between;
     padding: 1.2rem 3rem;
-    background: rgba(13, 40, 24, 0.85);
+    background: rgba(12, 61, 110, 0.9);
     backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(77, 175, 80, 0.2);
+    border-bottom: 1px solid rgba(125, 211, 252, 0.25);
     transition: all 0.3s;
   }
   nav.scrolled {
     padding: 0.8rem 3rem;
-    background: rgba(10, 28, 18, 0.97);
+    background: rgba(8, 47, 88, 0.97);
   }
   .nav-logo {
     font-family: 'Pacifico', cursive;
@@ -319,10 +321,10 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse at 20% 50%, rgba(45,122,79,0.3) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 50%, rgba(198,40,40,0.15) 0%, transparent 60%),
-      radial-gradient(ellipse at 50% 20%, rgba(255,215,0,0.05) 0%, transparent 50%),
-      linear-gradient(160deg, #071810 0%, #0d2818 50%, #071810 100%);
+      radial-gradient(ellipse at 20% 50%, rgba(56,189,248,0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 50%, rgba(251,191,36,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 50% 20%, rgba(255,255,255,0.08) 0%, transparent 50%),
+      linear-gradient(160deg, #0a3d6e 0%, #1a6ba8 50%, #0c4a7a 100%);
   }
   .hero-leaves {
     position: absolute;
@@ -443,7 +445,7 @@
   /* ABOUT */
   .about {
     padding: 8rem 3rem;
-    background: linear-gradient(to bottom, var(--jungle-dark), var(--jungle-mid));
+    background: linear-gradient(to bottom, var(--jungle-dark), #155e8a);
     overflow: hidden;
   }
   .about-grid {
@@ -460,12 +462,12 @@
   .about-img-placeholder {
     width: 100%;
     aspect-ratio: 4/3;
-    background: linear-gradient(135deg, #1a4a2e, #0d2818);
+    background: linear-gradient(135deg, #1a6ba8, #0c3d6e);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(77,175,80,0.2);
+    border: 1px solid rgba(125,211,252,0.25);
     font-size: 4rem;
     position: relative;
     overflow: hidden;
@@ -474,7 +476,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 30% 40%, rgba(45,122,79,0.4), transparent 70%);
+    background: radial-gradient(ellipse at 30% 40%, rgba(56,189,248,0.35), transparent 70%);
   }
   .about-badge {
     position: absolute;
@@ -548,9 +550,9 @@
     position: absolute;
     inset: 0;
     background: 
-      radial-gradient(ellipse at 10% 50%, rgba(45,122,79,0.5) 0%, transparent 40%),
-      radial-gradient(ellipse at 50% 50%, rgba(139,195,74,0.2) 0%, transparent 40%),
-      radial-gradient(ellipse at 90% 50%, rgba(45,122,79,0.5) 0%, transparent 40%);
+      radial-gradient(ellipse at 10% 50%, rgba(56,189,248,0.4) 0%, transparent 40%),
+      radial-gradient(ellipse at 50% 50%, rgba(253,224,71,0.15) 0%, transparent 40%),
+      radial-gradient(ellipse at 90% 50%, rgba(56,189,248,0.4) 0%, transparent 40%);
   }
   .divider-text {
     position: absolute;
@@ -566,15 +568,28 @@
   /* MENU */
   .menu-section {
     padding: 7rem 3rem;
-    background: linear-gradient(160deg, var(--jungle-mid) 0%, #0f3020 50%, var(--jungle-mid) 100%);
+    background: linear-gradient(160deg, #1a6ba8 0%, #0c4a7a 50%, #1a6ba8 100%);
   }
   .menu-header { text-align: center; margin-bottom: 4rem; }
   .menu-grid {
-    max-width: 1100px;
+    max-width: 920px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .menu-category-block {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(186,230,253,0.2);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+  }
+  .menu-category-note {
+    font-size: 0.85rem;
+    color: var(--leaf-lime);
+    font-style: italic;
+    margin: -0.5rem 0 1.25rem;
+    line-height: 1.5;
   }
   .menu-category-title {
     font-family: 'Playfair Display', serif;
@@ -592,7 +607,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 1rem 0;
-    border-bottom: 1px solid rgba(77,175,80,0.1);
+    border-bottom: 1px solid rgba(186,230,253,0.15);
     transition: all 0.3s;
   }
   .menu-item:hover { padding-left: 0.5rem; }
@@ -636,8 +651,8 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    background: linear-gradient(135deg, #1a4a2e, #0d2818);
-    border: 1px solid rgba(77,175,80,0.15);
+    background: linear-gradient(135deg, #1a6ba8, #0c3d6e);
+    border: 1px solid rgba(125,211,252,0.15);
   }
   .gallery-item.wide { grid-column: span 2; }
   .gallery-item.tall { grid-row: span 2; }
@@ -669,17 +684,17 @@
     text-transform: uppercase;
     color: var(--sand);
   }
-  .gallery-bg-1 { background: linear-gradient(135deg, #2d4a1e, #1a3010); }
-  .gallery-bg-2 { background: linear-gradient(135deg, #4a2010, #2d1008); }
-  .gallery-bg-3 { background: linear-gradient(135deg, #1e3a4a, #0d1e2d); }
-  .gallery-bg-4 { background: linear-gradient(135deg, #4a3a10, #2d2208); }
-  .gallery-bg-5 { background: linear-gradient(135deg, #2d1a4a, #180d2d); }
-  .gallery-bg-6 { background: linear-gradient(135deg, #1a4a3a, #0d2d24); }
+  .gallery-bg-1 { background: linear-gradient(135deg, #1a6ba8, #0c3d6e); }
+  .gallery-bg-2 { background: linear-gradient(135deg, #0c4a7a, #061e38); }
+  .gallery-bg-3 { background: linear-gradient(135deg, #38bdf8, #0c4a7a); }
+  .gallery-bg-4 { background: linear-gradient(135deg, #1a6ba8, #0f4c81); }
+  .gallery-bg-5 { background: linear-gradient(135deg, #0284c7, #0c3d6e); }
+  .gallery-bg-6 { background: linear-gradient(135deg, #7dd3fc, #1a6ba8); }
 
   /* TEAM */
   .chefs-section {
     padding: 7rem 3rem;
-    background: linear-gradient(to bottom, #0f3020, var(--jungle-mid));
+    background: linear-gradient(to bottom, #0c4a7a, var(--jungle-mid));
   }
   .chefs-header { text-align: center; margin-bottom: 4rem; }
   .chefs-grid {
@@ -698,12 +713,12 @@
     width: 150px; height: 150px;
     border-radius: 50%;
     margin: 0 auto 1.5rem;
-    background: linear-gradient(135deg, #1a4a2e, #0d2818);
+    background: linear-gradient(135deg, #1a6ba8, #0c3d6e);
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
-    border: 3px solid rgba(77,175,80,0.3);
+    border: 3px solid rgba(125,211,252,0.3);
     position: relative;
     overflow: hidden;
   }
@@ -712,7 +727,7 @@
     position: absolute;
     bottom: 0; left: 0; right: 0;
     height: 40%;
-    background: linear-gradient(to top, rgba(45,122,79,0.4), transparent);
+    background: linear-gradient(to top, rgba(56,189,248,0.4), transparent);
   }
   .chef-name {
     font-family: 'Playfair Display', serif;
@@ -736,7 +751,7 @@
   /* CTA BANNER */
   .cta-banner {
     padding: 3rem;
-    background: linear-gradient(135deg, var(--toucan-orange) 0%, var(--toucan-red) 100%);
+    background: linear-gradient(135deg, #1a6ba8 0%, #0c4a7a 60%, var(--toucan-yellow) 100%);
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -792,8 +807,8 @@
   .contact-icon {
     width: 45px; height: 45px;
     border-radius: 50%;
-    background: rgba(77,175,80,0.15);
-    border: 1px solid rgba(77,175,80,0.3);
+    background: rgba(56,189,248,0.15);
+    border: 1px solid rgba(186,230,253,0.35);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -818,8 +833,8 @@
   .form-field textarea {
     width: 100%;
     padding: 0.9rem 1.2rem;
-    background: rgba(45,122,79,0.1);
-    border: 1px solid rgba(77,175,80,0.2);
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(125,211,252,0.25);
     border-radius: 8px;
     color: var(--sand);
     font-family: 'Nunito', sans-serif;
@@ -835,9 +850,9 @@
 
   /* FOOTER */
   footer {
-    background: #050f0a;
+    background: #061e38;
     padding: 3rem;
-    border-top: 1px solid rgba(77,175,80,0.1);
+    border-top: 1px solid rgba(186,230,253,0.15);
   }
   .footer-grid {
     max-width: 1100px;
@@ -874,7 +889,7 @@
     max-width: 1100px;
     margin: 2rem auto 0;
     padding-top: 2rem;
-    border-top: 1px solid rgba(77,175,80,0.1);
+    border-top: 1px solid rgba(125,211,252,0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -885,8 +900,8 @@
   .social-link {
     width: 36px; height: 36px;
     border-radius: 50%;
-    background: rgba(77,175,80,0.1);
-    border: 1px solid rgba(77,175,80,0.2);
+    background: rgba(125,211,252,0.1);
+    border: 1px solid rgba(125,211,252,0.25);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -901,15 +916,86 @@
     color: white;
   }
 
-  /* CUSTOM MENU MANAGER */
+  /* ADMIN PANEL (hidden unless ?admin=true + password) */
   .menu-manager {
+    display: none;
     max-width: 1100px;
     margin: 4rem auto 0;
-    background: rgba(45,122,79,0.08);
-    border: 1px solid rgba(77,175,80,0.25);
+    background: rgba(15,76,129,0.25);
+    border: 2px solid var(--toucan-yellow);
     border-radius: 16px;
     padding: 2.5rem;
   }
+  .menu-manager.admin-visible { display: block; }
+  .admin-login-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10001;
+    background: rgba(10,22,40,0.85);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+  }
+  .admin-login-overlay.show { display: flex; }
+  .admin-login-box {
+    background: linear-gradient(160deg, #1a6ba8, #0c3d6e);
+    border: 2px solid var(--toucan-yellow);
+    border-radius: 16px;
+    padding: 2.5rem;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  .admin-login-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--sand);
+    margin-bottom: 0.5rem;
+  }
+  .admin-login-box p { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .admin-login-box input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(186,230,253,0.4);
+    border-radius: 8px;
+    background: rgba(12,61,110,0.6);
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    margin-bottom: 1rem;
+  }
+  .admin-badge {
+    display: none;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 9998;
+    background: var(--toucan-yellow);
+    color: var(--text-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    letter-spacing: 1px;
+  }
+  .admin-badge.show { display: block; }
+  .admin-edit-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 80px auto;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    align-items: start;
+  }
+  .admin-edit-row input, .admin-edit-row textarea {
+    padding: 0.5rem;
+    background: rgba(12,61,110,0.7);
+    border: 1px solid rgba(186,230,253,0.3);
+    border-radius: 6px;
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.85rem;
+  }
+  .admin-edit-row textarea { min-height: 52px; resize: vertical; }
+  .admin-category-editor { margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(186,230,253,0.2); }
   .menu-manager-title {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
@@ -934,7 +1020,7 @@
   .manager-form input, .manager-form select {
     padding: 0.75rem 1rem;
     background: rgba(13,40,24,0.8);
-    border: 1px solid rgba(77,175,80,0.25);
+    border: 1px solid rgba(125,211,252,0.25);
     border-radius: 8px;
     color: var(--sand);
     font-family: 'Nunito', sans-serif;
@@ -945,7 +1031,7 @@
   }
   .manager-form input:focus, .manager-form select:focus { border-color: var(--toucan-orange); }
   .manager-form input::placeholder { color: var(--text-muted); }
-  .manager-form select option { background: #0d2818; color: var(--sand); }
+  .manager-form select option { background: #0c3d6e; color: var(--sand); }
   .add-item-btn {
     padding: 0.75rem 1.4rem;
     background: linear-gradient(135deg, var(--toucan-orange), var(--toucan-red));
@@ -982,7 +1068,7 @@
     gap: 1rem;
     padding: 0.9rem 1.2rem;
     background: rgba(13,40,24,0.6);
-    border: 1px solid rgba(77,175,80,0.15);
+    border: 1px solid rgba(125,211,252,0.15);
     border-radius: 8px;
     animation: slideIn 0.3s ease;
   }
@@ -1043,8 +1129,8 @@
 
   /* HOURS RIBBON */
   .hours-ribbon {
-    background: rgba(45,122,79,0.15);
-    border: 1px solid rgba(77,175,80,0.2);
+    background: rgba(56,189,248,0.15);
+    border: 1px solid rgba(125,211,252,0.25);
     border-radius: 8px;
     padding: 1.5rem;
     margin-top: 1.5rem;
@@ -1061,7 +1147,7 @@
     display: flex;
     justify-content: space-between;
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(77,175,80,0.1);
+    border-bottom: 1px solid rgba(186,230,253,0.15);
     font-size: 0.9rem;
   }
   .hours-row:last-child { border-bottom: none; }
@@ -1081,9 +1167,9 @@
     <svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
       <defs>
         <linearGradient id="leafGradL" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" style="stop-color:#0d4a1e"/>
-          <stop offset="40%" style="stop-color:#1a7a3a"/>
-          <stop offset="100%" style="stop-color:#0a2d14"/>
+          <stop offset="0%" style="stop-color:#0c4a7a"/>
+          <stop offset="40%" style="stop-color:#38bdf8"/>
+          <stop offset="100%" style="stop-color:#0c3d6e"/>
         </linearGradient>
         <linearGradient id="veinGradL" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style="stop-color:#4caf50;stop-opacity:0.6"/>
@@ -1104,21 +1190,21 @@
         L 0 910 L 0 0 Z
       " fill="url(#leafGradL)"/>
       <!-- Monstera holes -->
-      <ellipse cx="420" cy="250" rx="35" ry="55" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="500" cy="380" rx="28" ry="45" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="380" cy="450" rx="22" ry="35" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="460" cy="550" rx="20" ry="30" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="350" cy="620" rx="18" ry="28" fill="#0d2818" opacity="0.9"/>
+      <ellipse cx="420" cy="250" rx="35" ry="55" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="500" cy="380" rx="28" ry="45" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="380" cy="450" rx="22" ry="35" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="460" cy="550" rx="20" ry="30" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="350" cy="620" rx="18" ry="28" fill="#0c3d6e" opacity="0.9"/>
       <!-- Central vein -->
       <path d="M 560 10 Q 480 200 440 400 Q 400 600 350 900" 
             fill="none" stroke="url(#veinGradL)" stroke-width="4" opacity="0.8"/>
       <!-- Side veins -->
-      <path d="M 480 100 Q 380 150 280 180" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 520 200 Q 400 260 260 300" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 530 320 Q 420 370 300 390" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 490 450 Q 390 490 280 500" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 450 580 Q 370 610 260 620" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 420 700 Q 340 730 240 740" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 480 100 Q 380 150 280 180" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 520 200 Q 400 260 260 300" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 530 320 Q 420 370 300 390" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 490 450 Q 390 490 280 500" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 450 580 Q 370 610 260 620" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 420 700 Q 340 730 240 740" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
       <!-- Leaf edge highlight -->
       <path d="
         M 580 0
@@ -1126,7 +1212,7 @@
         C 620 280, 640 380, 580 440
         C 560 480, 520 490, 500 520
         C 490 550, 510 570, 500 600
-      " fill="none" stroke="#8bc34a" stroke-width="2" opacity="0.4"/>
+      " fill="none" stroke="#fde047" stroke-width="2" opacity="0.4"/>
       <!-- Dew drops -->
       <circle cx="510" cy="160" r="5" fill="#a5d6a7" opacity="0.5"/>
       <circle cx="550" cy="300" r="4" fill="#a5d6a7" opacity="0.4"/>
@@ -1139,9 +1225,9 @@
     <svg viewBox="0 0 600 900" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="transform:scaleX(-1)">
       <defs>
         <linearGradient id="leafGradR" x1="100%" y1="0%" x2="0%" y2="100%">
-          <stop offset="0%" style="stop-color:#0d4a1e"/>
-          <stop offset="40%" style="stop-color:#1a7a3a"/>
-          <stop offset="100%" style="stop-color:#0a2d14"/>
+          <stop offset="0%" style="stop-color:#0c4a7a"/>
+          <stop offset="40%" style="stop-color:#38bdf8"/>
+          <stop offset="100%" style="stop-color:#0c3d6e"/>
         </linearGradient>
         <linearGradient id="veinGradR" x1="100%" y1="0%" x2="0%" y2="0%">
           <stop offset="0%" style="stop-color:#4caf50;stop-opacity:0.6"/>
@@ -1160,21 +1246,21 @@
         C 340 860, 350 890, 340 910
         L 0 910 L 0 0 Z
       " fill="url(#leafGradR)"/>
-      <ellipse cx="420" cy="250" rx="35" ry="55" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="500" cy="380" rx="28" ry="45" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="380" cy="450" rx="22" ry="35" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="460" cy="550" rx="20" ry="30" fill="#0d2818" opacity="0.9"/>
-      <ellipse cx="350" cy="620" rx="18" ry="28" fill="#0d2818" opacity="0.9"/>
+      <ellipse cx="420" cy="250" rx="35" ry="55" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="500" cy="380" rx="28" ry="45" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="380" cy="450" rx="22" ry="35" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="460" cy="550" rx="20" ry="30" fill="#0c3d6e" opacity="0.9"/>
+      <ellipse cx="350" cy="620" rx="18" ry="28" fill="#0c3d6e" opacity="0.9"/>
       <path d="M 560 10 Q 480 200 440 400 Q 400 600 350 900" 
             fill="none" stroke="url(#veinGradR)" stroke-width="4" opacity="0.8"/>
-      <path d="M 480 100 Q 380 150 280 180" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 520 200 Q 400 260 260 300" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 530 320 Q 420 370 300 390" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 490 450 Q 390 490 280 500" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 450 580 Q 370 610 260 620" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
-      <path d="M 420 700 Q 340 730 240 740" fill="none" stroke="#4caf50" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 480 100 Q 380 150 280 180" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 520 200 Q 400 260 260 300" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 530 320 Q 420 370 300 390" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 490 450 Q 390 490 280 500" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 450 580 Q 370 610 260 620" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
+      <path d="M 420 700 Q 340 730 240 740" fill="none" stroke="#7dd3fc" stroke-width="1.5" opacity="0.3"/>
       <path d="M 580 0 C 580 0, 620 100, 600 200 C 620 280, 640 380, 580 440 C 560 480, 520 490, 500 520 C 490 550, 510 570, 500 600" 
-            fill="none" stroke="#8bc34a" stroke-width="2" opacity="0.4"/>
+            fill="none" stroke="#fde047" stroke-width="2" opacity="0.4"/>
       <circle cx="510" cy="160" r="5" fill="#a5d6a7" opacity="0.5"/>
       <circle cx="550" cy="300" r="4" fill="#a5d6a7" opacity="0.4"/>
       <circle cx="490" cy="480" r="3" fill="#a5d6a7" opacity="0.35"/>
@@ -1185,7 +1271,7 @@
   <div class="enter-content">
     <div style="font-size:3rem; margin-bottom:0.5rem;">🦜</div>
     <div class="overlay-title">Islands<br>in the<br>Stream</div>
-    <div class="overlay-sub">Caribbean · Richmond, KY</div>
+    <div class="overlay-sub">A Caribbean Dream · Richmond, KY</div>
     <div style="font-size:0.8rem;letter-spacing:3px;color:var(--leaf-lime);text-transform:uppercase;animation:pulse 1.5s ease infinite;">Opening...</div>
   </div>
 
@@ -1224,7 +1310,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">🌺 Richmond, Kentucky's Caribbean Escape 🌺</p>
       <h1 class="hero-title">Islands<br>in the <em>Stream</em></h1>
-      <p class="hero-sub">Caribbean Cuisine · Crafted Cocktails · Downtown Vibes</p>
+      <p class="hero-sub">A Caribbean Dream · 144 East Main Street · Richmond, KY</p>
       <div class="hero-btns">
         <a href="#menu" class="btn-primary">Explore Menu</a>
         <a href="#contact" class="btn-secondary">Get Directions</a>
@@ -1251,12 +1337,12 @@
       <div class="reveal reveal-delay-2">
         <div style="background:rgba(21,101,192,0.18);border:1px solid rgba(79,195,247,0.25);border-radius:14px;padding:2rem 2rem 1.5rem;">
           <div class="section-label">🌺 Our Story</div>
-          <h2 class="section-title">Richmond's Newest <em style="color:#66bb6a;font-style:italic;">Caribbean</em> Destination</h2>
+          <h2 class="section-title">Richmond's Newest <em style="color:var(--toucan-yellow);font-style:italic;">Caribbean</em> Destination</h2>
         <p class="section-body">
           Nestled in the heart of downtown Richmond at 144 E. Main Street, Islands in the Stream brings the vibrant flavors and soulful spirit of the Caribbean straight to the Bluegrass State.
         </p>
         <p class="section-body">
-          From our beloved jerk chicken and coconut shrimp to fresh conch fritters and rich oxtail soup — every dish is a journey. We've created a space where creative Caribbean cuisine meets Kentucky warmth, with stunning murals, a full bar, and a patio that makes every evening feel like an island getaway.
+          From jerk chicken and coconut shrimp to conch fritters and island-inspired entrées — every dish is a journey. We've created a space where Caribbean cuisine meets Kentucky warmth, with a full bar and a welcoming downtown atmosphere.
         </p>
         <div class="about-stats">
           <div class="stat">
@@ -1279,7 +1365,7 @@
 
   <!-- DIVIDER -->
   <div class="jungle-divider">
-    <div class="divider-text">🌿 · The Flavors of the Islands · 🌿</div>
+    <div class="divider-text">☀️ · The Flavors of the Islands · ☀️</div>
   </div>
 
   <!-- MENU -->
@@ -1288,168 +1374,23 @@
       <div class="section-label">🍽️ What We Serve</div>
       <h2 class="section-title">Caribbean Menu</h2>
     </div>
-    <div class="menu-grid">
-      <div class="reveal">
-        <div class="menu-category-title">🥥 Starters & Small Plates</div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Coconut Shrimp</div>
-            <div class="menu-item-desc">Five jumbo shrimp in a golden coconut crust, house remoulade</div>
-          </div>
-          <div class="menu-item-price">$14</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Conch Fritters</div>
-            <div class="menu-item-desc">Island-style fritters, pepper dipping sauce, fresh lime</div>
-          </div>
-          <div class="menu-item-price">$12</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Mango Salsa & Chips</div>
-            <div class="menu-item-desc">Fresh cut mango, jalapeño, red onion, cilantro, house chips</div>
-          </div>
-          <div class="menu-item-price">$10</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Oxtail Soup</div>
-            <div class="menu-item-desc">Slow-braised, rich Caribbean spiced broth, root vegetables</div>
-          </div>
-          <div class="menu-item-price">$13</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Island Panini</div>
-            <div class="menu-item-desc">Caribbean seasoned chicken, tropical slaw, pepper jack</div>
-          </div>
-          <div class="menu-item-price">$11</div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <div class="menu-category-title">🍖 Main Course</div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Jerk Chicken</div>
-            <div class="menu-item-desc">Signature jerk-spiced thigh, rice & beans, fried plantains</div>
-          </div>
-          <div class="menu-item-price">$22</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Oxtail Stew</div>
-            <div class="menu-item-desc">Slow-braised in Caribbean spices, white rice, fresh coleslaw</div>
-          </div>
-          <div class="menu-item-price">$28</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Coconut Curry Shrimp</div>
-            <div class="menu-item-desc">Jumbo shrimp in house coconut curry, jasmine rice, roti</div>
-          </div>
-          <div class="menu-item-price">$24</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Fried Plantains</div>
-            <div class="menu-item-desc">Sweet caramelized plantains, dipping sauce — add to any plate</div>
-          </div>
-          <div class="menu-item-price">$6</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Island Seafood Bowl</div>
-            <div class="menu-item-desc">Mixed seafood, coconut rice, festival bread, mango glaze</div>
-          </div>
-          <div class="menu-item-price">$26</div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-1">
-        <div class="menu-category-title">🍹 Cocktails & Drinks</div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Island Rum Punch</div>
-            <div class="menu-item-desc">Dark rum, tropical fruit blend, coconut cream, lime</div>
-          </div>
-          <div class="menu-item-price">$12</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Mango Mojito</div>
-            <div class="menu-item-desc">Fresh mint, white rum, muddled mango, soda, lime</div>
-          </div>
-          <div class="menu-item-price">$11</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Toucan Sunrise</div>
-            <div class="menu-item-desc">Tequila, orange & passion fruit juice, grenadine float</div>
-          </div>
-          <div class="menu-item-price">$13</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Coconut Water Fresh</div>
-            <div class="menu-item-desc">Pure young coconut water, served chilled</div>
-          </div>
-          <div class="menu-item-price">$5</div>
-        </div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <div class="menu-category-title">🌺 Sides & Extras</div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Rice & Peas</div>
-            <div class="menu-item-desc">Traditional Caribbean rice with kidney beans, coconut milk</div>
-          </div>
-          <div class="menu-item-price">$5</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Festival Bread</div>
-            <div class="menu-item-desc">Sweet fried dough, Caribbean-style — served with jerk butter</div>
-          </div>
-          <div class="menu-item-price">$4</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Tropical Coleslaw</div>
-            <div class="menu-item-desc">Mango, cabbage, red onion, lime dressing</div>
-          </div>
-          <div class="menu-item-price">$4</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">Jerk Seasoning Sauce</div>
-            <div class="menu-item-desc">House-made to take home — ask your server</div>
-          </div>
-          <div class="menu-item-price">$8</div>
-        </div>
-      </div>
-    </div>
+    <div class="menu-grid" id="menuContainer"></div>
+    <p class="reveal menu-allergy-note" style="max-width:920px;margin:2.5rem auto 0;padding:1.25rem 1.5rem;background:rgba(255,255,255,0.08);border:1px solid rgba(253,224,71,0.4);border-radius:8px;font-size:0.9rem;color:var(--sand);text-align:center;line-height:1.6;"><strong>FOOD ALLERGY NOTICE</strong> — If you have a food allergy or a special dietary requirement please inform a member of staff. Thank you.</p>
 
-    <!-- CUSTOM MENU MANAGER -->
-    <div class="menu-manager reveal">
-      <div class="menu-manager-title">✏️ Add Custom Menu Items</div>
-      <div class="menu-manager-sub">Owner/staff tool — add specials or new dishes that appear live on the page below.</div>
-      <div class="manager-form">
-        <input type="text" id="newItemName" placeholder="Dish name...">
-        <input type="text" id="newItemDesc" placeholder="Short description...">
-        <input type="text" id="newItemPrice" placeholder="Price (e.g. $18)">
-        <select id="newItemCat">
-          <option value="Starters">Starters</option>
-          <option value="Main Course">Main Course</option>
-          <option value="Cocktails">Cocktails</option>
-          <option value="Sides">Sides</option>
-          <option value="Specials">🌟 Specials</option>
-        </select>
-        <button class="add-item-btn" onclick="addMenuItem()">+ Add Item</button>
-        <button class="clear-btn" onclick="clearAllItems()">Clear All</button>
+    <div class="menu-manager" id="adminPanel">
+      <div class="menu-manager-title">🔐 Owner Menu Editor</div>
+      <div class="menu-manager-sub">Changes save to this browser (localStorage). Edit <code>DEFAULT_MENU</code> in index.html on GitHub for site-wide defaults.</div>
+      <div id="adminEditor"></div>
+      <div class="manager-form" style="margin-top:1.5rem;grid-template-columns:1fr 2fr 100px auto auto;">
+        <input type="text" id="newItemName" placeholder="New dish name...">
+        <input type="text" id="newItemDesc" placeholder="Description...">
+        <input type="text" id="newItemPrice" placeholder="$0.00">
+        <select id="newItemCat"></select>
+        <button class="add-item-btn" type="button" onclick="adminAddItem()">+ Add</button>
+        <button class="clear-btn" type="button" onclick="adminResetMenu()">Reset defaults</button>
       </div>
-      <div class="custom-items-list" id="customItemsList">
-        <div class="empty-state" id="emptyState">No custom items yet — add your first special above! 🌴</div>
-      </div>
+      <button class="add-item-btn" type="button" style="margin-top:1rem;" onclick="adminSaveAndRender()">💾 Save menu</button>
+      <button class="clear-btn" type="button" style="margin-top:1rem;margin-left:0.5rem;" onclick="adminExit()">Exit admin</button>
     </div>
   </section>
   <section class="gallery-section" id="gallery">
@@ -1474,7 +1415,7 @@
       </div>
       <div class="gallery-item gallery-bg-4">
         <div class="gallery-item-inner">🥘</div>
-        <div class="gallery-item-overlay"><span class="gallery-label">Oxtail Stew</span></div>
+        <div class="gallery-item-overlay"><span class="gallery-label">Rasta Pasta</span></div>
       </div>
       <div class="gallery-item gallery-bg-5">
         <div class="gallery-item-inner">🌮</div>
@@ -1702,6 +1643,7 @@ const observer = new IntersectionObserver((entries) => {
     if (el.isIntersecting) el.target.classList.add('visible');
   });
 }, { threshold: 0.1 });
+window.menuObserver = observer;
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Hero parallax leaves
@@ -1723,7 +1665,7 @@ function buildHeroLeaves() {
     div.dataset.depth = 0.3 + (i % 3) * 0.2;
     div.dataset.baseRot = d.rot;
     div.style.cssText = `left:${d.x}%;top:${d.y}%;width:${d.size}vw;opacity:${d.opacity};transform:rotate(${d.rot}deg);font-size:${d.size/3}rem;`;
-    div.textContent = ['🌿','🍃','🌴','🌱'][i % 4];
+    div.textContent = ['☁️','🌤️','⭐','🌊'][i % 4];
     container.appendChild(div);
   });
 }
@@ -1742,61 +1684,277 @@ document.addEventListener('mousemove', e => {
   });
 });
 
-// ========== CUSTOM MENU MANAGER ==========
-let customItems = [];
+// Islands in the Stream — menu data & admin (injected into index.html)
+const ADMIN_PASSWORD = 'islands2026';
+const MENU_STORAGE_KEY = 'iits-menu-v1';
 
-function addMenuItem() {
-  const name = document.getElementById('newItemName').value.trim();
-  const desc = document.getElementById('newItemDesc').value.trim();
-  const price = document.getElementById('newItemPrice').value.trim();
-  const cat = document.getElementById('newItemCat').value;
-  if (!name) { document.getElementById('newItemName').focus(); return; }
-  const item = { id: Date.now(), name, desc, price: price || '—', cat };
-  customItems.push(item);
-  renderCustomItems();
-  document.getElementById('newItemName').value = '';
-  document.getElementById('newItemDesc').value = '';
-  document.getElementById('newItemPrice').value = '';
-  document.getElementById('newItemName').focus();
-}
+const DEFAULT_MENU = [
+  {
+    id: 'new-items',
+    title: '🌟 New Menu Items',
+    note: '',
+    items: [
+      { name: 'Fish or Shrimp Tacos with Pineapple and Mango Pico de Gallo (3)', desc: '', price: '$11.99' },
+      { name: 'Rasta Pasta', desc: 'Penne pasta tossed in a creamy jerk alfredo with onions, peppers and shredded jerk chicken', price: '$9.99' },
+      { name: 'Parmesan Crusted Pork Ribeye', desc: 'With roasted garlic parmesan Brussel Sprouts', price: '$15.99' },
+      { name: 'Bloody Mary with Shrimp and Bacon', desc: 'Coated with our jerk seasoning rim', price: '$7.99' }
+    ]
+  },
+  {
+    id: 'appetizers',
+    title: '🥥 Appetizers',
+    note: '',
+    items: [
+      { name: 'Conch Fritters', desc: 'Five golden-fried fritters made from tender conch meat and spiced batter, served with a side of our Jamaican Me Crazy Sauce', price: '$6.99' },
+      { name: 'Jerk Chicken Wings', desc: 'Eight savory and spicy chicken wings marinated in our signature jerk seasoning, served with our house made ranch dressing', price: '$9.99' },
+      { name: 'Coconut Shrimp', desc: 'Five golden-fried shrimp battered in our johnny cake mixture and coated with shredded coconut, served with remoulade', price: '$7.99' },
+      { name: 'Mango Salsa & Chips', desc: 'Vibrant blend of juicy mango, pineapple, red onions, jalapeño and cilantro served with hot tortilla chips', price: '$5.99' },
+      { name: 'Jamaican Pork Twinkies', desc: 'Four sweet peppers stuffed with cream cheese, Caribbean pulled pork and wrapped in bacon then baked to perfection', price: '$8.99' },
+      { name: 'Johnny Cakes', desc: 'Our fluffy house made dough mix deep fried and brushed with butter', price: '$3.99 (4) · $4.99 (6)' },
+      { name: 'Screaming Deviled Eggs', desc: 'Classic hard-boiled egg whites filled with a zesty yolk mixture. Add fried shrimp for $4.99', price: '$4.99 (5) · $5.99 (8)' }
+    ]
+  },
+  {
+    id: 'entrees',
+    title: '🍖 Entrées',
+    note: 'Each entrée served with one side. Want to spice it up? Just let us know!',
+    items: [
+      { name: 'Caribbean Pulled Pork with Coconut & Mango Rice', desc: 'Slow-smoked pork shoulder, hand-shredded and tossed in our house-made jerk BBQ sauce', price: '$13.99' },
+      { name: 'Jerk Chicken with Coconut & Mango Rice', desc: 'Juicy, tender chicken marinated in our signature jerk seasoning and grilled to perfection', price: '$10.99' },
+      { name: 'Grilled or Fried White Fish', desc: 'Marinated with coconut milk and garlic, grilled or golden-fried with our special blend of seasonings', price: '$10.99' },
+      { name: "Kickin' Caribbean Ribs", desc: 'Four succulent pork rib cutlets marinated overnight in our secret sauce and finished with house Caribbean BBQ sauce', price: '$13.99' },
+      { name: 'Coconut Shrimp', desc: 'Six golden-fried shrimp battered in our johnny cake mixture and coated with shredded coconut', price: '$11.99' },
+      { name: 'Jamaican Beef Patty', desc: 'A flaky pastry crust filled with Caribbean seasoned beef with shredded Swiss cheese mixed in', price: '$9.99' },
+      { name: 'Island Burger', desc: '½ lb Caribbean seasoned burger topped with pepperjack cheese, grilled pineapple, grilled onion, mango salsa and house BBQ sauce', price: '$13.99' },
+      { name: 'Jerk Chicken Pot Pie', desc: 'Savory slow-cooked jerk chicken and vegetables in a creamy roux, topped with a flaky pastry shell', price: '$9.99' }
+    ]
+  },
+  {
+    id: 'sandwiches',
+    title: '🥪 Sandwiches',
+    note: 'Served with your choice of kettle chips or slaw. Add a cup of soup for $3.',
+    items: [
+      { name: 'Cuban Pork Panini', desc: 'Smoked pork shoulder marinated in pineapple and banana sauce topped with ham, Swiss, bread and butter pickles and mustard', price: '$11.99' },
+      { name: 'Cuban Jerk Chicken Panini', desc: 'Juicy chicken marinated in jerk seasoning topped with ham, Swiss, bread and butter pickles and mustard', price: '$10.99' },
+      { name: 'Fish or Shrimp Po Boy', desc: 'Golden-fried shrimp on a hoagie bun topped with Jamaican Sunshine Slaw and house sauce', price: '$10.99' }
+    ]
+  },
+  {
+    id: 'soups',
+    title: '🍲 Soups',
+    note: 'Ask us about our soup of the week!',
+    items: [
+      { name: 'Marry Me You Jerk', desc: 'Rich cream-based soup with sautéed onions, peppers, fire-roasted tomatoes, spinach, cheese tortellini and gnocchi with diced bacon and jerk chicken', price: '$7.99' }
+    ]
+  },
+  {
+    id: 'sides',
+    title: '🌴 Sides',
+    note: 'All sides $2.99 each',
+    items: [
+      { name: 'Three Bean Salad', desc: 'Cannellini, kidney and black beans with serrano pepper, red onion, diced tomato and cilantro', price: '$2.99' },
+      { name: 'Rice & Beans', desc: 'Fragrant rice mixed with tender beans and aromatic spices', price: '$2.99' },
+      { name: 'Jamaican Sunshine Slaw', desc: 'Shredded cabbage, carrots and jalapeño tossed in honey lime vinaigrette', price: '$2.99' },
+      { name: 'Fried Plantains', desc: 'Sweet ripe plantains fried until golden brown and sprinkled with house Cajun', price: '$2.99' },
+      { name: 'Coconut & Mango Rice', desc: 'Coconut infused jasmine rice topped with fresh mango', price: '$2.99' },
+      { name: 'Grilled Squash & Zucchini', desc: 'Sautéed in our signature jerk seasoning', price: '$2.99' },
+      { name: 'Corn Ribs', desc: 'Roasted sweet corn with savory spice rub and parmesan cheese', price: '$2.99' },
+      { name: 'French Fries', desc: 'Fresh cut potatoes deep-fried until crispy and golden brown', price: '$2.99' },
+      { name: 'Kettle Chips', desc: '', price: '$2.99' }
+    ]
+  },
+  {
+    id: 'sauces',
+    title: '🫙 House Made Sauces & Dressings',
+    note: 'Add an extra cup of sauce or dressing for 25¢',
+    items: [
+      { name: 'Mango Lime Dressing', desc: 'Mango, lime, garlic, cilantro and red pepper flakes', price: '' },
+      { name: 'Honey Lime Vinaigrette', desc: 'Honey, lime, red wine vinegar, cumin and red pepper flakes', price: '' },
+      { name: 'Ranch Dressing', desc: 'Milk, premium mayonnaise and a savory blend of herbs and spices', price: '' },
+      { name: 'Jamaican Me Crazy Sauce', desc: 'Our one-of-a-kind zesty sauce crafted fresh in-house', price: '' }
+    ]
+  },
+  {
+    id: 'desserts',
+    title: '🍰 Desserts',
+    note: '',
+    items: [
+      { name: 'Maduros', desc: 'Fried plantains tossed in sugar, drizzled with chocolate or caramel syrup topped with powdered sugar', price: '$4.99' },
+      { name: 'Sweet Johnny', desc: 'Five golden-brown johnny cakes tossed in powdered sugar and topped with cinnamon', price: '$4.99' },
+      { name: 'Caribbean Rum Cake', desc: 'Scratch-made cake infused with premium dark rum, finished with buttery rum glaze. Room temp or heated on request', price: '$5.99' }
+    ]
+  },
+  {
+    id: 'kids',
+    title: '👧 Kids Menu',
+    note: 'All kids meals $6.99 (drink included). Choose fries or mixed orange slices & pineapple.',
+    items: [
+      { name: 'Grilled Cheese Panini', desc: '', price: '$6.99' },
+      { name: 'Grilled Ham & Cheese Panini', desc: '', price: '$6.99' },
+      { name: 'Fish Bites', desc: '', price: '$6.99' }
+    ]
+  }
+];
 
-function deleteMenuItem(id) {
-  customItems = customItems.filter(i => i.id !== id);
-  renderCustomItems();
-}
+let menuData = [];
+let adminUnlocked = false;
 
-function clearAllItems() {
-  if (customItems.length === 0) return;
-  if (confirm('Clear all custom menu items?')) {
-    customItems = [];
-    renderCustomItems();
+function loadMenu() {
+  try {
+    const saved = localStorage.getItem(MENU_STORAGE_KEY);
+    menuData = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_MENU));
+  } catch {
+    menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
   }
 }
 
-function renderCustomItems() {
-  const list = document.getElementById('customItemsList');
-  const empty = document.getElementById('emptyState');
-  if (customItems.length === 0) {
-    list.innerHTML = '<div class="empty-state" id="emptyState">No custom items yet — add your first special above! 🌴</div>';
-    return;
-  }
-  list.innerHTML = customItems.map(item => `
-    <div class="custom-item-row">
-      <span class="custom-item-cat">${item.cat}</span>
-      <span class="custom-item-name">${item.name}</span>
-      <span class="custom-item-desc">${item.desc || '—'}</span>
-      <span class="custom-item-price">${item.price}</span>
-      <button class="delete-item-btn" onclick="deleteMenuItem(${item.id})" title="Remove">✕</button>
+function saveMenu() {
+  localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuData));
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderMenu() {
+  const container = document.getElementById('menuContainer');
+  if (!container) return;
+  container.innerHTML = menuData.map(cat => `
+    <div class="menu-category-block reveal">
+      <div class="menu-category-title">${escapeHtml(cat.title)}</div>
+      ${cat.note ? `<p class="menu-category-note">${escapeHtml(cat.note)}</p>` : ''}
+      ${cat.items.map(item => `
+        <div class="menu-item" data-cat="${escapeHtml(cat.id)}">
+          <div>
+            <div class="menu-item-name">${escapeHtml(item.name)}</div>
+            ${item.desc ? `<div class="menu-item-desc">${escapeHtml(item.desc)}</div>` : ''}
+          </div>
+          ${item.price ? `<div class="menu-item-price">${escapeHtml(item.price)}</div>` : ''}
+        </div>
+      `).join('')}
+    </div>
+  `).join('');
+  document.querySelectorAll('#menuContainer .reveal').forEach(el => {
+    if (window.menuObserver) window.menuObserver.observe(el);
+    else el.classList.add('visible');
+  });
+  if (adminUnlocked) renderAdminEditor();
+}
+
+function renderAdminEditor() {
+  const editor = document.getElementById('adminEditor');
+  const catSelect = document.getElementById('newItemCat');
+  if (!editor || !catSelect) return;
+  catSelect.innerHTML = menuData.map(c => `<option value="${escapeHtml(c.id)}">${escapeHtml(c.title.replace(/^[^\s]+\s/, ''))}</option>`).join('');
+  editor.innerHTML = menuData.map((cat, ci) => `
+    <div class="admin-category-editor">
+      <strong style="color:var(--toucan-yellow);">${escapeHtml(cat.title)}</strong>
+      ${cat.items.map((item, ii) => `
+        <div class="admin-edit-row">
+          <input value="${escapeHtml(item.name)}" onchange="adminUpdateItem(${ci},${ii},'name',this.value)">
+          <textarea onchange="adminUpdateItem(${ci},${ii},'desc',this.value)">${escapeHtml(item.desc)}</textarea>
+          <input value="${escapeHtml(item.price)}" onchange="adminUpdateItem(${ci},${ii},'price',this.value)">
+          <button class="delete-item-btn" type="button" onclick="adminDeleteItem(${ci},${ii})">✕</button>
+        </div>
+      `).join('')}
     </div>
   `).join('');
 }
 
-// Allow Enter key to add item
-document.addEventListener('keydown', e => {
-  if (e.key === 'Enter' && (e.target.id === 'newItemName' || e.target.id === 'newItemDesc' || e.target.id === 'newItemPrice')) {
-    addMenuItem();
+function adminUpdateItem(ci, ii, field, value) {
+  menuData[ci].items[ii][field] = value;
+}
+
+function adminDeleteItem(ci, ii) {
+  if (confirm('Remove this item?')) {
+    menuData[ci].items.splice(ii, 1);
+    saveMenu();
+    renderMenu();
   }
+}
+
+function adminAddItem() {
+  const name = document.getElementById('newItemName').value.trim();
+  const desc = document.getElementById('newItemDesc').value.trim();
+  const price = document.getElementById('newItemPrice').value.trim();
+  const catId = document.getElementById('newItemCat').value;
+  if (!name) return;
+  const cat = menuData.find(c => c.id === catId);
+  if (cat) cat.items.push({ name, desc, price });
+  document.getElementById('newItemName').value = '';
+  document.getElementById('newItemDesc').value = '';
+  document.getElementById('newItemPrice').value = '';
+  saveMenu();
+  renderMenu();
+}
+
+function adminSaveAndRender() {
+  saveMenu();
+  renderMenu();
+  alert('Menu saved to this browser.');
+}
+
+function adminResetMenu() {
+  if (confirm('Reset menu to defaults? This clears your local edits.')) {
+    localStorage.removeItem(MENU_STORAGE_KEY);
+    menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
+    renderMenu();
+  }
+}
+
+function adminExit() {
+  adminUnlocked = false;
+  sessionStorage.removeItem('iits-admin-session');
+  document.getElementById('adminPanel').classList.remove('admin-visible');
+  document.getElementById('adminBadge').classList.remove('show');
+}
+
+function showAdminPanel() {
+  adminUnlocked = true;
+  sessionStorage.setItem('iits-admin-session', '1');
+  document.getElementById('adminPanel').classList.add('admin-visible');
+  document.getElementById('adminBadge').classList.add('show');
+  renderAdminEditor();
+}
+
+function initAdmin() {
+  const params = new URLSearchParams(window.location.search);
+  if (sessionStorage.getItem('iits-admin-session') === '1') {
+    showAdminPanel();
+    return;
+  }
+  if (params.get('admin') === 'true') {
+    document.getElementById('adminLoginOverlay').classList.add('show');
+  }
+}
+
+function adminLoginSubmit() {
+  const pw = document.getElementById('adminPasswordInput').value;
+  if (pw === ADMIN_PASSWORD) {
+    document.getElementById('adminLoginOverlay').classList.remove('show');
+    showAdminPanel();
+  } else {
+    alert('Incorrect password.');
+  }
+}
+
+loadMenu();
+document.addEventListener('DOMContentLoaded', () => {
+  renderMenu();
+  initAdmin();
 });
+
 </script>
+
+<div class="admin-login-overlay" id="adminLoginOverlay">
+  <div class="admin-login-box">
+    <h3>Owner Login</h3>
+    <p>Enter the admin password to edit the menu.</p>
+    <input type="password" id="adminPasswordInput" placeholder="Password" onkeydown="if(event.key==='Enter')adminLoginSubmit()">
+    <button class="add-item-btn" type="button" onclick="adminLoginSubmit()" style="width:100%;">Unlock Editor</button>
+  </div>
+</div>
+<div class="admin-badge" id="adminBadge">✏️ Admin Mode</div>
+
 </body>
 </html>
