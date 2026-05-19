@@ -23,6 +23,70 @@
     --text-muted: #bae6fd;
     --text-dark: #0a1628;
     --sky-pale: #e0f2fe;
+    --teal-box: rgba(22, 118, 130, 0.42);
+    --teal-box-border: rgba(56, 189, 186, 0.45);
+    --teal-box-deep: rgba(14, 82, 95, 0.55);
+  }
+
+  /* Greenish-blue content boxes */
+  .content-box {
+    background: linear-gradient(145deg, var(--teal-box), var(--teal-box-deep)) !important;
+    border: 1px solid var(--teal-box-border) !important;
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(0, 40, 60, 0.25);
+  }
+
+  /* Mosaic corner decoration (stained-glass style, larger tiles) */
+  .mosaic-corner {
+    position: absolute;
+    width: clamp(100px, 18vw, 160px);
+    height: clamp(100px, 18vw, 160px);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.92;
+  }
+  .mosaic-corner.mosaic-tl { top: 0; left: 0; }
+  .mosaic-corner.mosaic-tr { top: 0; right: 0; }
+  .mosaic-corner.mosaic-bl { bottom: 0; left: 0; }
+  .mosaic-corner.mosaic-br { bottom: 0; right: 0; }
+  .mosaic-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 4px;
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+  }
+  .mosaic-tile {
+    border: 2.5px solid #0a1628;
+    border-radius: 3px;
+    min-height: 22px;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.15);
+  }
+  .mosaic-frame {
+    position: relative;
+    padding: 2.5rem 3rem;
+  }
+  .enter-content.mosaic-frame { z-index: 2; }
+
+  /* Parrot decorations */
+  .parrot-deco {
+    position: absolute;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    pointer-events: none;
+    z-index: 4;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.45));
+    animation: parrotFloat 4s ease-in-out infinite;
+  }
+  @keyframes parrotFloat {
+    0%, 100% { transform: translateY(0) rotate(-3deg); }
+    50% { transform: translateY(-10px) rotate(3deg); }
+  }
+  .parrot-deco.flip { transform: scaleX(-1); animation-name: parrotFloatFlip; }
+  @keyframes parrotFloatFlip {
+    0%, 100% { transform: scaleX(-1) translateY(0) rotate(3deg); }
+    50% { transform: scaleX(-1) translateY(-10px) rotate(-3deg); }
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -579,29 +643,47 @@
     gap: 2.5rem;
   }
   .menu-category-block {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(186,230,253,0.2);
+    background: linear-gradient(145deg, var(--teal-box), rgba(14, 70, 85, 0.35));
+    border: 1px solid var(--teal-box-border);
     border-radius: 12px;
     padding: 1.75rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .menu-category-block--featured {
+    border-color: rgba(253, 224, 71, 0.45);
+    box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.15);
+  }
+  .menu-category-block .mosaic-corner {
+    width: clamp(72px, 12vw, 110px);
+    height: clamp(72px, 12vw, 110px);
+    opacity: 0.75;
   }
   .menu-category-note {
     font-size: 0.85rem;
-    color: var(--leaf-lime);
+    color: #ffffff;
     font-style: italic;
     margin: -0.5rem 0 1.25rem;
     line-height: 1.5;
   }
   .menu-category-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: 1.45rem;
     color: var(--toucan-yellow);
     margin-bottom: 1.5rem;
     padding-bottom: 0.8rem;
-    border-bottom: 1px solid rgba(255,215,0,0.2);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
     display: flex;
     align-items: center;
-    gap: 0.8rem;
+    gap: 1rem;
   }
+  .menu-category-icon {
+    font-size: 2.35rem;
+    line-height: 1;
+    flex-shrink: 0;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+  }
+  .menu-category-label { flex: 1; }
   .menu-item {
     display: flex;
     justify-content: space-between;
@@ -613,20 +695,21 @@
   .menu-item:hover { padding-left: 0.5rem; }
   .menu-item-name {
     font-weight: 700;
-    color: var(--sand);
-    font-size: 0.95rem;
+    color: var(--toucan-orange);
+    font-size: 0.98rem;
     margin-bottom: 0.3rem;
   }
   .menu-item-desc {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    line-height: 1.5;
-    max-width: 250px;
+    font-size: 0.85rem;
+    color: #ffffff;
+    line-height: 1.55;
+    max-width: 420px;
+    opacity: 0.95;
   }
   .menu-item-price {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
-    color: var(--toucan-orange);
+    color: #ffffff;
     font-weight: 700;
     white-space: nowrap;
     margin-left: 1rem;
@@ -1268,10 +1351,12 @@
   </div>
 
   <!-- Enter content -->
-  <div class="enter-content">
-    <div style="font-size:3rem; margin-bottom:0.5rem;">🦜</div>
+  <div class="enter-content mosaic-frame" id="introMosaicFrame">
+    <div class="parrot-deco" style="top:-8%;left:18%;font-size:2.8rem;">🦜</div>
+    <div class="parrot-deco flip" style="top:5%;right:12%;animation-delay:0.8s;">🦜</div>
+    <div style="font-size:3.5rem; margin-bottom:0.5rem;">🦜</div>
     <div class="overlay-title">Islands<br>in the<br>Stream</div>
-    <div class="overlay-sub">A Caribbean Dream · Richmond, KY</div>
+    <div class="overlay-sub">The Caribbean Dream · Richmond, KY</div>
     <div style="font-size:0.8rem;letter-spacing:3px;color:var(--leaf-lime);text-transform:uppercase;animation:pulse 1.5s ease infinite;">Opening...</div>
   </div>
 
@@ -1310,7 +1395,7 @@
     <div class="hero-content">
       <p class="hero-eyebrow">🌺 Richmond, Kentucky's Caribbean Escape 🌺</p>
       <h1 class="hero-title">Islands<br>in the <em>Stream</em></h1>
-      <p class="hero-sub">A Caribbean Dream · 144 East Main Street · Richmond, KY</p>
+      <p class="hero-sub">The Caribbean Dream · 144 East Main Street · Richmond, KY</p>
       <div class="hero-btns">
         <a href="#menu" class="btn-primary">Explore Menu</a>
         <a href="#contact" class="btn-secondary">Get Directions</a>
@@ -1665,7 +1750,7 @@ function buildHeroLeaves() {
     div.dataset.depth = 0.3 + (i % 3) * 0.2;
     div.dataset.baseRot = d.rot;
     div.style.cssText = `left:${d.x}%;top:${d.y}%;width:${d.size}vw;opacity:${d.opacity};transform:rotate(${d.rot}deg);font-size:${d.size/3}rem;`;
-    div.textContent = ['☁️','🌤️','⭐','🌊'][i % 4];
+    div.textContent = ['🦜','🦜','🦜','🦜'][i % 4];
     container.appendChild(div);
   });
 }
@@ -1816,12 +1901,61 @@ function escapeHtml(s) {
   return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
 
+
+const CATEGORY_META = {
+  'new-items': { icon: '✨', label: 'New Menu Items' },
+  'appetizers': { icon: '🍤', label: 'Appetizers' },
+  'entrees': { icon: '🥩', label: 'Entrées' },
+  'sandwiches': { icon: '🥙', label: 'Sandwiches' },
+  'soups': { icon: '🍲', label: 'Soups' },
+  'sides': { icon: '🥗', label: 'Sides' },
+  'sauces': { icon: '🫙', label: 'House Made Sauces & Dressings' },
+  'desserts': { icon: '🍰', label: 'Desserts' },
+  'kids': { icon: '🧒', label: 'Kids Menu' }
+};
+
+const MOSAIC_COLORS = ['#f5c842','#e8943a','#2d8f7f','#1a6ba8','#5c4dad','#fde047','#38bdf8','#c45c26','#167a8c','#7cb342','#ec4899','#0ea5e9'];
+
+function buildMosaicCorner(parent, position) {
+  const corner = document.createElement('div');
+  corner.className = 'mosaic-corner mosaic-' + position;
+  const grid = document.createElement('div');
+  grid.className = 'mosaic-grid';
+  const offset = position.charCodeAt(0) + position.charCodeAt(1);
+  for (let i = 0; i < 16; i++) {
+    const tile = document.createElement('span');
+    tile.className = 'mosaic-tile';
+    tile.style.background = MOSAIC_COLORS[(i + offset) % MOSAIC_COLORS.length];
+    grid.appendChild(tile);
+  }
+  corner.appendChild(grid);
+  parent.appendChild(corner);
+}
+
+function attachMosaicCorners(parent) {
+  if (!parent || parent.querySelector('.mosaic-corner')) return;
+  ['tl', 'tr', 'bl', 'br'].forEach(p => buildMosaicCorner(parent, p));
+}
+
+function getCategoryMeta(cat) {
+  if (CATEGORY_META[cat.id]) return CATEGORY_META[cat.id];
+  const m = String(cat.title || '').match(/^(\S+)\s+(.*)$/);
+  return m ? { icon: m[1], label: m[2] } : { icon: '🍽️', label: cat.title };
+}
+
 function renderMenu() {
   const container = document.getElementById('menuContainer');
   if (!container) return;
-  container.innerHTML = menuData.map(cat => `
-    <div class="menu-category-block reveal">
-      <div class="menu-category-title">${escapeHtml(cat.title)}</div>
+  container.innerHTML = menuData.map(cat => {
+    const meta = getCategoryMeta(cat);
+    const featured = cat.id === 'new-items';
+    const blockClass = featured ? 'menu-category-block menu-category-block--featured' : 'menu-category-block';
+    return `
+    <div class="${blockClass} reveal" data-cat-id="${escapeHtml(cat.id)}">
+      <div class="menu-category-title">
+        <span class="menu-category-icon">${meta.icon}</span>
+        <span class="menu-category-label">${escapeHtml(meta.label)}</span>
+      </div>
       ${cat.note ? `<p class="menu-category-note">${escapeHtml(cat.note)}</p>` : ''}
       ${cat.items.map(item => `
         <div class="menu-item" data-cat="${escapeHtml(cat.id)}">
@@ -1832,13 +1966,18 @@ function renderMenu() {
           ${item.price ? `<div class="menu-item-price">${escapeHtml(item.price)}</div>` : ''}
         </div>
       `).join('')}
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
   document.querySelectorAll('#menuContainer .reveal').forEach(el => {
     if (window.menuObserver) window.menuObserver.observe(el);
     else el.classList.add('visible');
   });
+  document.querySelectorAll('.menu-category-block--featured').forEach(el => attachMosaicCorners(el));
   if (adminUnlocked) renderAdminEditor();
+}
+
+function initMosaicDecor() {
+  attachMosaicCorners(document.getElementById('introMosaicFrame'));
 }
 
 function renderAdminEditor() {
@@ -1941,6 +2080,7 @@ function adminLoginSubmit() {
 loadMenu();
 document.addEventListener('DOMContentLoaded', () => {
   renderMenu();
+  initMosaicDecor();
   initAdmin();
 });
 
