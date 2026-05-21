@@ -614,20 +614,22 @@
       animation: slideUp 1s ease forwards 1.1s;
     }
 
-    .btn-primary {
-      padding: 1rem 2.5rem;
-      background: linear-gradient(135deg, var(--toucan-orange), var(--toucan-red));
-      color: white;
-      font-family: 'Nunito', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 50px;
-      box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
-      transition: all 0.3s;
-    }
+  .btn-primary {
+    padding: 1rem 2.5rem;
+    background: linear-gradient(135deg, var(--toucan-orange), var(--toucan-red));
+    color: white;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
 
     .btn-primary:hover {
       transform: translateY(-3px);
@@ -1860,6 +1862,295 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
     }
+
+    /* Intro overlay — Order Online CTA */
+    .overlay-order-btn {
+      margin-top: 0.25rem;
+      padding: 1.1rem 2.75rem;
+      background: linear-gradient(135deg, var(--toucan-yellow), var(--toucan-orange));
+      color: #1a2e1f;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 10px 32px rgba(251, 191, 36, 0.55);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .overlay-order-btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 14px 40px rgba(255, 107, 53, 0.5);
+    }
+
+    .hero-btns .btn-order-hero {
+      font-size: 1rem;
+      padding: 1.15rem 3rem;
+      order: -1;
+    }
+
+    /* Owners spotlight */
+    .owners-spotlight {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .owners-photo-wrap {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 1.75rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 4px solid rgba(253, 224, 71, 0.5);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .owners-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .owners-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--toucan-yellow);
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
+    }
+
+    .owners-bio {
+      color: var(--text-muted);
+      line-height: 1.85;
+      font-size: 1.02rem;
+    }
+
+    .chef-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      position: relative;
+      z-index: 1;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      margin-left: auto;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(253, 224, 71, 0.4);
+      color: var(--sand);
+      font-size: 1.4rem;
+      width: 44px;
+      height: 44px;
+      border-radius: 8px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .gallery-thumb-grid {
+      display: none;
+      max-width: 1000px;
+      margin: 1.5rem auto 0;
+      gap: 10px;
+    }
+
+    .gallery-thumb-grid button {
+      border: none;
+      padding: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 4/3;
+      opacity: 0.75;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .gallery-thumb-grid button.active,
+    .gallery-thumb-grid button:hover {
+      opacity: 1;
+      transform: scale(1.02);
+      outline: 2px solid var(--toucan-orange);
+    }
+
+    .gallery-thumb-grid button img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        padding: 1rem 1.25rem;
+        flex-wrap: wrap;
+      }
+
+      .nav-toggle {
+        display: flex;
+        margin-left: auto;
+      }
+
+      .nav-menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.25rem 0 0.5rem;
+        border-top: 1px solid rgba(125, 211, 252, 0.2);
+        margin-top: 0.75rem;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        text-align: center;
+      }
+
+      .nav-ctas {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .nav-ctas .order-btn,
+      .nav-ctas .reserve-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .chefs-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-thumb-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-dots {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: clamp(2.2rem, 10vw, 3.5rem);
+      }
+
+      .hero-eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+      }
+
+      .hero-sub,
+      .hero-address {
+        font-size: 0.85rem;
+      }
+
+      .hero-btns {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .hero-btns .btn-primary,
+      .hero-btns .btn-secondary,
+      .hero-btns .btn-order-hero {
+        width: 100%;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+      }
+
+      .menu-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+
+      .menu-item-price {
+        margin-left: 0;
+      }
+
+      .menu-category-block {
+        padding: 1.25rem 1rem;
+      }
+
+      .menu-section,
+      .gallery-section,
+      .about,
+      .chefs-section,
+      .contact-section {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .gallery-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 1.4rem;
+      }
+
+      .gallery-prev { left: 0.5rem; }
+      .gallery-next { right: 0.5rem; }
+
+      .owners-photo-wrap {
+        width: 180px;
+        height: 180px;
+      }
+
+      .overlay-title {
+        font-size: clamp(2rem, 9vw, 3.5rem);
+      }
+
+      .enter-content {
+        padding: 2rem 1.5rem !important;
+      }
+
+      .overlay-order-btn {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
   </style>
 </head>
 
@@ -1984,6 +2275,7 @@
       <span class="box-parrot corner-br">🦜</span>
       <div class="overlay-title">Islands<br>in the<br>Stream</div>
       <div class="overlay-sub">Caribbean Cuisine · Crafted Cocktails · Downtown Vibes</div>
+      <button type="button" class="overlay-order-btn order-online-trigger">Order Online</button>
       <div
         style="font-size:0.8rem;letter-spacing:3px;color:var(--leaf-lime);text-transform:uppercase;animation:pulse 1.5s ease infinite;">
         Opening...</div>
@@ -2002,16 +2294,19 @@
     <!-- NAV -->
     <nav id="navbar">
       <a href="#hero" class="nav-logo">🌴 Islands<span>.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#chefs">Team</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <div class="nav-ctas">
-        <button type="button" class="order-btn" id="orderOnlineBtn" aria-haspopup="dialog">Order Online</button>
-        <a href="tel:8595758010" class="reserve-btn">Call Us</a>
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#about">Our Story</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#chefs">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-ctas">
+          <button type="button" class="order-btn order-online-trigger" id="orderOnlineBtn" aria-haspopup="dialog">Order Online</button>
+          <a href="tel:8595758010" class="reserve-btn">Call Us</a>
+        </div>
       </div>
     </nav>
 
@@ -2027,7 +2322,8 @@
         <p class="hero-sub">Caribbean Cuisine · Crafted Cocktails · Downtown Vibes</p>
         <p class="hero-address">144 East Main Street · Richmond, KY</p>
         <div class="hero-btns">
-          <a href="#menu" class="btn-primary">Explore Menu</a>
+          <button type="button" class="btn-primary btn-order-hero order-online-trigger">Order Online</button>
+          <a href="#menu" class="btn-secondary">Explore Menu</a>
           <a href="#contact" class="btn-secondary">Get Directions</a>
         </div>
       </div>
@@ -2134,6 +2430,7 @@
           <button type="button" class="gallery-nav gallery-next" id="galleryNext" aria-label="Next photo">&#8250;</button>
         </div>
         <div class="gallery-dots" id="galleryDots"></div>
+        <div class="gallery-thumb-grid" id="galleryThumbGrid"></div>
         <p class="gallery-counter" id="galleryCounter">1 / 19</p>
       </div>
     </section>
@@ -2146,28 +2443,16 @@
         <p class="section-body" style="max-width:500px;margin:0 auto;">Both owners are on-site daily, making sure every
           guest leaves with a full belly and a smile — that's the Islands promise.</p>
       </div>
-      <div class="chefs-grid">
-        <div class="chef-card reveal">
-          <div class="chef-img">👩‍🍳</div>
-          <div class="chef-name">Head Chef</div>
-          <div class="chef-role">Executive Chef</div>
-          <div class="chef-bio">Trained in Caribbean culinary traditions, bringing authentic island recipes to every
-            plate with passion and precision.</div>
+      <div class="owners-spotlight reveal">
+        <div class="owners-photo-wrap">
+          <img src="images/owners.png" alt="The owners of Islands in the Stream" class="owners-photo">
         </div>
-        <div class="chef-card reveal reveal-delay-1">
-          <div class="chef-img">👨‍🍳</div>
-          <div class="chef-name">Co-Owner</div>
-          <div class="chef-role">Founder & Host</div>
-          <div class="chef-bio">On-site every service to ensure the Islands experience is everything we promised — warm,
-            vibrant, and unforgettable.</div>
-        </div>
-        <div class="chef-card reveal reveal-delay-2">
-          <div class="chef-img">🍹</div>
-          <div class="chef-name">Bar Manager</div>
-          <div class="chef-role">Cocktail Artisan</div>
-          <div class="chef-bio">Crafting tropical cocktails that transport you straight to the Caribbean — one sip at a
-            time.</div>
-        </div>
+        <h3 class="owners-title">Owners</h3>
+        <p class="owners-bio">
+          Rooted in Caribbean culinary tradition and the art of craft beverages, our owners bring authentic island flavor
+          to every plate and pour. On-site daily, they ensure the Islands experience is everything we promised—warm,
+          vibrant, and unforgettable.
+        </p>
       </div>
     </section>
 
@@ -2301,8 +2586,7 @@
       <div class="order-modal-btns">
         <a href="https://www.coloneldelivery.com/glue/express/649?delivery=true&rwg_token=AFd1xnGi6LFPk_HqD3MN0X5TzezMbbpyF4z8qD3I0__wx5-2Bvy0kp9RmbADwFpovPOzKWg7yJeJQVc4VY640zDRggIrMdKg8g%3D%3D"
           class="order-modal-btn delivery" target="_blank" rel="noopener noreferrer">🚗 Delivery</a>
-        <!-- REPLACE WITH SQUARE ORDERING LINK (Square Dashboard → Online Store) -->
-        <a href="#" class="order-modal-btn pickup">🏃 Pickup</a>
+        <a href="https://islands-in-the-stream.square.site/s/order?location=LBES7E775CMH7" class="order-modal-btn pickup" target="_blank" rel="noopener noreferrer">🏃 Pickup</a>
       </div>
     </div>
   </div>
@@ -2369,6 +2653,7 @@
       );
       const slidesEl = document.getElementById('gallerySlides');
       const dotsEl = document.getElementById('galleryDots');
+      const thumbGridEl = document.getElementById('galleryThumbGrid');
       const counterEl = document.getElementById('galleryCounter');
       const prevBtn = document.getElementById('galleryPrev');
       const nextBtn = document.getElementById('galleryNext');
@@ -2387,17 +2672,28 @@
         dot.type = 'button';
         dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', `Photo ${i + 1}`);
-        dot.addEventListener('click', () => goTo(i));
+        dot.addEventListener('click', () => { goTo(i); resetAutoplay(); });
         dotsEl.appendChild(dot);
+
+        if (thumbGridEl) {
+          const thumb = document.createElement('button');
+          thumb.type = 'button';
+          thumb.className = i === 0 ? 'active' : '';
+          thumb.innerHTML = `<img src="${src}" alt="" loading="lazy">`;
+          thumb.addEventListener('click', () => { goTo(i); resetAutoplay(); });
+          thumbGridEl.appendChild(thumb);
+        }
       });
 
       const slideEls = slidesEl.querySelectorAll('.gallery-slide');
       const dotEls = dotsEl.querySelectorAll('.gallery-dot');
+      const thumbEls = thumbGridEl ? thumbGridEl.querySelectorAll('button') : [];
 
       function goTo(i) {
         index = (i + GALLERY_IMAGES.length) % GALLERY_IMAGES.length;
         slideEls.forEach((s, j) => s.classList.toggle('active', j === index));
         dotEls.forEach((d, j) => d.classList.toggle('active', j === index));
+        thumbEls.forEach((t, j) => t.classList.toggle('active', j === index));
         if (counterEl) counterEl.textContent = `${index + 1} / ${GALLERY_IMAGES.length}`;
       }
 
@@ -2418,7 +2714,6 @@
     // Order Online modal
     const orderModal = document.getElementById('orderModal');
     const orderModalPanel = document.getElementById('orderModalPanel');
-    const orderOnlineBtn = document.getElementById('orderOnlineBtn');
     const orderModalClose = document.getElementById('orderModalClose');
 
     function openOrderModal() {
@@ -2431,7 +2726,26 @@
       orderModal.classList.remove('open');
       document.body.style.overflow = '';
     }
-    if (orderOnlineBtn) orderOnlineBtn.addEventListener('click', openOrderModal);
+    document.querySelectorAll('.order-online-trigger').forEach(btn => {
+      btn.addEventListener('click', openOrderModal);
+    });
+
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.textContent = isOpen ? '✕' : '☰';
+      });
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          navToggle.textContent = '☰';
+        });
+      });
+    }
     if (orderModalClose) orderModalClose.addEventListener('click', closeOrderModal);
     if (orderModal) {
       orderModal.addEventListener('click', e => {
