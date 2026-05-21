@@ -336,6 +336,7 @@
     text-decoration: none;
     border-radius: 50px;
     border: none;
+    cursor: pointer;
     transition: all 0.3s;
     box-shadow: 0 4px 15px rgba(255,215,0,0.35);
   }
@@ -1209,6 +1210,107 @@
   .hours-row:last-child { border-bottom: none; }
   .hours-day { color: var(--text-muted); }
   .hours-time { color: var(--sand); font-weight: 600; }
+  .hours-time.closed { color: var(--text-muted); font-weight: 400; font-style: italic; }
+
+  /* ORDER MODAL */
+  .order-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10002;
+    background: rgba(6, 30, 18, 0.88);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    backdrop-filter: blur(6px);
+  }
+  .order-modal-overlay.open { display: flex; }
+  .order-modal {
+    position: relative;
+    background: linear-gradient(160deg, #0d2818 0%, #1a3d24 50%, #0f3220 100%);
+    border: 2px solid rgba(251, 191, 36, 0.45);
+    border-radius: 20px;
+    padding: 2.5rem 2rem 2rem;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(253, 224, 71, 0.1);
+    animation: orderModalIn 0.35s ease;
+  }
+  @keyframes orderModalIn {
+    from { opacity: 0; transform: scale(0.92) translateY(12px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .order-modal-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(253, 224, 71, 0.35);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--sand);
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+    font-family: 'Nunito', sans-serif;
+  }
+  .order-modal-close:hover {
+    background: var(--toucan-orange);
+    border-color: var(--toucan-orange);
+    color: white;
+  }
+  .order-modal-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 1.75rem;
+    color: var(--sand);
+    margin-bottom: 0.35rem;
+  }
+  .order-modal-sub {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.75rem;
+    letter-spacing: 1px;
+  }
+  .order-modal-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .order-modal-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    padding: 1.15rem 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .order-modal-btn.delivery {
+    background: linear-gradient(135deg, var(--toucan-orange), #c2410c);
+    color: white;
+    box-shadow: 0 8px 24px rgba(251, 146, 60, 0.45);
+  }
+  .order-modal-btn.pickup {
+    background: linear-gradient(135deg, var(--toucan-yellow), #ca8a04);
+    color: #1a2e1f;
+    box-shadow: 0 8px 24px rgba(253, 224, 71, 0.35);
+  }
+  .order-modal-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  }
 </style>
 </head>
 <body>
@@ -1353,7 +1455,7 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-ctas">
-      <a href="#" class="order-btn">Order Online</a>
+      <button type="button" class="order-btn" id="orderOnlineBtn" aria-haspopup="dialog">Order Online</button>
       <a href="tel:8595758010" class="reserve-btn">Call Us</a>
     </div>
   </nav>
@@ -1561,10 +1663,13 @@
         </div>
         <div class="hours-ribbon">
           <div class="hours-title">🕐 Hours of Operation</div>
-          <div class="hours-row"><span class="hours-day">Tuesday – Thursday</span><span class="hours-time">11am – 9pm</span></div>
-          <div class="hours-row"><span class="hours-day">Friday – Saturday</span><span class="hours-time">11am – 10pm</span></div>
-          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">12pm – 8pm</span></div>
-          <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time">Closed</span></div>
+          <div class="hours-row"><span class="hours-day">Monday</span><span class="hours-time closed">Closed</span></div>
+          <div class="hours-row"><span class="hours-day">Tuesday</span><span class="hours-time closed">Closed</span></div>
+          <div class="hours-row"><span class="hours-day">Wednesday</span><span class="hours-time">11am – 9pm</span></div>
+          <div class="hours-row"><span class="hours-day">Thursday</span><span class="hours-time">11am – 9pm</span></div>
+          <div class="hours-row"><span class="hours-day">Friday</span><span class="hours-time">11am – 10pm</span></div>
+          <div class="hours-row"><span class="hours-day">Saturday</span><span class="hours-time">10:30am – 10pm</span></div>
+          <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">10:30am – 7pm</span></div>
         </div>
       </div>
       <div class="reveal reveal-delay-1">
@@ -1607,10 +1712,11 @@
       <div>
         <div class="footer-col-title">Hours</div>
         <ul class="footer-links">
-          <li><a href="#">Tue–Thu: 11am–9pm</a></li>
-          <li><a href="#">Fri–Sat: 11am–10pm</a></li>
-          <li><a href="#">Sun: 12pm–8pm</a></li>
-          <li><a href="#">Mon: Closed</a></li>
+          <li><a href="#contact">Mon &amp; Tue: Closed</a></li>
+          <li><a href="#contact">Wed–Thu: 11am–9pm</a></li>
+          <li><a href="#contact">Fri: 11am–10pm</a></li>
+          <li><a href="#contact">Sat: 10:30am–10pm</a></li>
+          <li><a href="#contact">Sun: 10:30am–7pm</a></li>
         </ul>
       </div>
       <div>
@@ -1630,6 +1736,20 @@
   </footer>
 
 </div><!-- end main-site -->
+
+<!-- Order Online modal -->
+<div class="order-modal-overlay" id="orderModal" role="dialog" aria-modal="true" aria-labelledby="orderModalTitle">
+  <div class="order-modal" id="orderModalPanel">
+    <button type="button" class="order-modal-close" id="orderModalClose" aria-label="Close">&times;</button>
+    <h2 class="order-modal-title" id="orderModalTitle">Order Online</h2>
+    <p class="order-modal-sub">How would you like your island feast?</p>
+    <div class="order-modal-btns">
+      <a href="https://www.coloneldelivery.com/glue/express/649?delivery=true&rwg_token=AFd1xnGi6LFPk_HqD3MN0X5TzezMbbpyF4z8qD3I0__wx5-2Bvy0kp9RmbADwFpovPOzKWg7yJeJQVc4VY640zDRggIrMdKg8g%3D%3D" class="order-modal-btn delivery" target="_blank" rel="noopener noreferrer">🚗 Delivery</a>
+      <!-- REPLACE WITH SQUARE ORDERING LINK (Square Dashboard → Online Store) -->
+      <a href="#" class="order-modal-btn pickup">🏃 Pickup</a>
+    </div>
+  </div>
+</div>
 
 <script>
 // Custom cursor
@@ -1688,6 +1808,36 @@ function revealSite() {
 
 // Trigger auto-reveal after 2 seconds (show intro, then leaves open)
 setTimeout(revealSite, 2000);
+
+// Order Online modal
+const orderModal = document.getElementById('orderModal');
+const orderModalPanel = document.getElementById('orderModalPanel');
+const orderOnlineBtn = document.getElementById('orderOnlineBtn');
+const orderModalClose = document.getElementById('orderModalClose');
+
+function openOrderModal() {
+  if (!orderModal) return;
+  orderModal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeOrderModal() {
+  if (!orderModal) return;
+  orderModal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+if (orderOnlineBtn) orderOnlineBtn.addEventListener('click', openOrderModal);
+if (orderModalClose) orderModalClose.addEventListener('click', closeOrderModal);
+if (orderModal) {
+  orderModal.addEventListener('click', e => {
+    if (e.target === orderModal) closeOrderModal();
+  });
+}
+if (orderModalPanel) {
+  orderModalPanel.addEventListener('click', e => e.stopPropagation());
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && orderModal && orderModal.classList.contains('open')) closeOrderModal();
+});
 
 // Nav scroll effect
 window.addEventListener('scroll', () => {
