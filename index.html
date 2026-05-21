@@ -507,19 +507,16 @@
     aspect-ratio: 4/3;
     background: linear-gradient(135deg, #1a6ba8, #0c3d6e);
     border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border: 1px solid rgba(125,211,252,0.25);
-    font-size: 4rem;
     position: relative;
     overflow: hidden;
   }
-  .about-img-placeholder::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse at 30% 40%, rgba(56,189,248,0.35), transparent 70%);
+  .about-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
   }
   .about-badge {
     position: absolute;
@@ -1487,7 +1484,7 @@
     <div class="about-grid">
       <div class="about-image-wrapper reveal">
         <div class="about-img-placeholder">
-          <span style="font-size:5rem;position:relative;z-index:1;">🌴</span>
+          <img src="images/storefront.png" alt="Islands in the Stream Caribbean Cafe &amp; Bar storefront at dusk, Richmond KY">
         </div>
         <div class="about-badge">
           Downtown<br>Richmond<br>KY
