@@ -1,0 +1,280 @@
+[
+  {
+    "id": "new-items",
+    "title": "🌟 New Menu Items",
+    "note": "",
+    "items": [
+      {
+        "name": "Fish or Shrimp Tacos with Pineapple and Mango Pico de Gallo (3)",
+        "desc": "Three soft tacos filled with your choice of golden, crispy white fish or fire-roasted shrimp, topped with a bright pineapple and mango pico de gallo—sweet, tangy, and kissed with island heat.",
+        "price": "$11.99"
+      },
+      {
+        "name": "Rasta Pasta",
+        "desc": "Penne pasta tossed in a creamy jerk alfredo with onions, peppers and shredded jerk chicken",
+        "price": "$9.99"
+      },
+      {
+        "name": "Parmesan Crusted Pork Ribeye",
+        "desc": "With roasted garlic parmesan Brussel Sprouts",
+        "price": "$15.99"
+      },
+      {
+        "name": "Bloody Mary with Shrimp and Bacon",
+        "desc": "Coated with our jerk seasoning rim",
+        "price": "$7.99"
+      }
+    ]
+  },
+  {
+    "id": "appetizers",
+    "title": "🥥 Appetizers",
+    "note": "",
+    "items": [
+      {
+        "name": "Conch Fritters",
+        "desc": "Five golden-fried fritters made from tender conch meat and spiced batter, served with a side of our Jamaican Me Crazy Sauce",
+        "price": "$6.99"
+      },
+      {
+        "name": "Jerk Chicken Wings",
+        "desc": "Eight savory and spicy chicken wings marinated in our signature jerk seasoning, served with our house made ranch dressing",
+        "price": "$9.99"
+      },
+      {
+        "name": "Coconut Shrimp",
+        "desc": "Five golden-fried shrimp battered in our johnny cake mixture and coated with shredded coconut, served with remoulade",
+        "price": "$7.99"
+      },
+      {
+        "name": "Mango Salsa & Chips",
+        "desc": "Vibrant blend of juicy mango, pineapple, red onions, jalapeño and cilantro served with hot tortilla chips",
+        "price": "$5.99"
+      },
+      {
+        "name": "Jamaican Pork Twinkies",
+        "desc": "Four sweet peppers stuffed with cream cheese, Caribbean pulled pork and wrapped in bacon then baked to perfection",
+        "price": "$8.99"
+      },
+      {
+        "name": "Johnny Cakes",
+        "desc": "Our fluffy house made dough mix deep fried and brushed with butter",
+        "price": "$3.99 (4) · $4.99 (6)"
+      },
+      {
+        "name": "Screaming Deviled Eggs",
+        "desc": "Classic hard-boiled egg whites filled with a zesty yolk mixture. Add fried shrimp for $4.99",
+        "price": "$4.99 (5) · $5.99 (8)"
+      }
+    ]
+  },
+  {
+    "id": "entrees",
+    "title": "🍖 Entrées",
+    "note": "Each entrée served with one side. Want to spice it up? Just let us know!",
+    "items": [
+      {
+        "name": "Caribbean Pulled Pork with Coconut & Mango Rice",
+        "desc": "Slow-smoked pork shoulder, hand-shredded and tossed in our house-made jerk BBQ sauce",
+        "price": "$13.99"
+      },
+      {
+        "name": "Jerk Chicken with Coconut & Mango Rice",
+        "desc": "Juicy, tender chicken marinated in our signature jerk seasoning and grilled to perfection",
+        "price": "$10.99"
+      },
+      {
+        "name": "Grilled or Fried White Fish",
+        "desc": "Marinated with coconut milk and garlic, grilled or golden-fried with our special blend of seasonings",
+        "price": "$10.99"
+      },
+      {
+        "name": "Kickin' Caribbean Ribs",
+        "desc": "Four succulent pork rib cutlets marinated overnight in our secret sauce and finished with house Caribbean BBQ sauce",
+        "price": "$13.99"
+      },
+      {
+        "name": "Coconut Shrimp",
+        "desc": "Six golden-fried shrimp battered in our johnny cake mixture and coated with shredded coconut",
+        "price": "$11.99"
+      },
+      {
+        "name": "Jamaican Beef Patty",
+        "desc": "A flaky pastry crust filled with Caribbean seasoned beef with shredded Swiss cheese mixed in",
+        "price": "$9.99"
+      },
+      {
+        "name": "Island Burger",
+        "desc": "½ lb Caribbean seasoned burger topped with pepperjack cheese, grilled pineapple, grilled onion, mango salsa and house BBQ sauce",
+        "price": "$13.99"
+      },
+      {
+        "name": "Jerk Chicken Pot Pie",
+        "desc": "Savory slow-cooked jerk chicken and vegetables in a creamy roux, topped with a flaky pastry shell",
+        "price": "$9.99"
+      }
+    ]
+  },
+  {
+    "id": "sandwiches",
+    "title": "🥪 Sandwiches",
+    "note": "Served with your choice of kettle chips or slaw. Add a cup of soup for $3.",
+    "items": [
+      {
+        "name": "Cuban Pork Panini",
+        "desc": "Smoked pork shoulder marinated in pineapple and banana sauce topped with ham, Swiss, bread and butter pickles and mustard",
+        "price": "$11.99"
+      },
+      {
+        "name": "Cuban Jerk Chicken Panini",
+        "desc": "Juicy chicken marinated in jerk seasoning topped with ham, Swiss, bread and butter pickles and mustard",
+        "price": "$10.99"
+      },
+      {
+        "name": "Fish or Shrimp Po Boy",
+        "desc": "Golden-fried shrimp on a hoagie bun topped with Jamaican Sunshine Slaw and house sauce",
+        "price": "$10.99"
+      }
+    ]
+  },
+  {
+    "id": "soups",
+    "title": "🍲 Soups",
+    "note": "Ask us about our soup of the week!",
+    "items": [
+      {
+        "name": "Marry Me You Jerk",
+        "desc": "Rich cream-based soup with sautéed onions, peppers, fire-roasted tomatoes, spinach, cheese tortellini and gnocchi with diced bacon and jerk chicken",
+        "price": "$7.99"
+      }
+    ]
+  },
+  {
+    "id": "sides",
+    "title": "🌴 Sides",
+    "note": "All sides $2.99 each",
+    "items": [
+      {
+        "name": "Three Bean Salad",
+        "desc": "Cannellini, kidney and black beans with serrano pepper, red onion, diced tomato and cilantro",
+        "price": "$2.99"
+      },
+      {
+        "name": "Rice & Beans",
+        "desc": "Fragrant rice mixed with tender beans and aromatic spices",
+        "price": "$2.99"
+      },
+      {
+        "name": "Jamaican Sunshine Slaw",
+        "desc": "Shredded cabbage, carrots and jalapeño tossed in honey lime vinaigrette",
+        "price": "$2.99"
+      },
+      {
+        "name": "Fried Plantains",
+        "desc": "Sweet ripe plantains fried until golden brown and sprinkled with house Cajun",
+        "price": "$2.99"
+      },
+      {
+        "name": "Coconut & Mango Rice",
+        "desc": "Coconut infused jasmine rice topped with fresh mango",
+        "price": "$2.99"
+      },
+      {
+        "name": "Grilled Squash & Zucchini",
+        "desc": "Sautéed in our signature jerk seasoning",
+        "price": "$2.99"
+      },
+      {
+        "name": "Corn Ribs",
+        "desc": "Roasted sweet corn with savory spice rub and parmesan cheese",
+        "price": "$2.99"
+      },
+      {
+        "name": "Brussel Sprouts",
+        "desc": "",
+        "price": "$3.99"
+      },
+      {
+        "name": "French Fries",
+        "desc": "Fresh cut potatoes deep-fried until crispy and golden brown",
+        "price": "$2.99"
+      },
+      {
+        "name": "Kettle Chips",
+        "desc": "",
+        "price": "$2.99"
+      }
+    ]
+  },
+  {
+    "id": "sauces",
+    "title": "🫙 House Made Sauces & Dressings",
+    "note": "Add an extra cup of sauce or dressing for 25¢",
+    "items": [
+      {
+        "name": "Mango Lime Dressing",
+        "desc": "Mango, lime, garlic, cilantro and red pepper flakes",
+        "price": ""
+      },
+      {
+        "name": "Honey Lime Vinaigrette",
+        "desc": "Honey, lime, red wine vinegar, cumin and red pepper flakes",
+        "price": ""
+      },
+      {
+        "name": "Ranch Dressing",
+        "desc": "Milk, premium mayonnaise and a savory blend of herbs and spices",
+        "price": ""
+      },
+      {
+        "name": "Jamaican Me Crazy Sauce",
+        "desc": "Our one-of-a-kind zesty sauce crafted fresh in-house",
+        "price": ""
+      }
+    ]
+  },
+  {
+    "id": "desserts",
+    "title": "🍰 Desserts",
+    "note": "",
+    "items": [
+      {
+        "name": "Maduros",
+        "desc": "Fried plantains tossed in sugar, drizzled with chocolate or caramel syrup topped with powdered sugar",
+        "price": "$4.99"
+      },
+      {
+        "name": "Sweet Johnny",
+        "desc": "Five golden-brown johnny cakes tossed in powdered sugar and topped with cinnamon",
+        "price": "$4.99"
+      },
+      {
+        "name": "Caribbean Rum Cake",
+        "desc": "Scratch-made cake infused with premium dark rum, finished with buttery rum glaze. Room temp or heated on request",
+        "price": "$5.99"
+      }
+    ]
+  },
+  {
+    "id": "kids",
+    "title": "👧 Kids Menu",
+    "note": "All kids meals $6.99 (drink included). Choose fries or mixed orange slices & pineapple.",
+    "items": [
+      {
+        "name": "Grilled Cheese Panini",
+        "desc": "",
+        "price": "$6.99"
+      },
+      {
+        "name": "Grilled Ham & Cheese Panini",
+        "desc": "",
+        "price": "$6.99"
+      },
+      {
+        "name": "Fish Bites",
+        "desc": "",
+        "price": "$6.99"
+      }
+    ]
+  }
+]

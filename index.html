@@ -2398,8 +2398,7 @@
 
       <div class="menu-manager" id="adminPanel">
         <div class="menu-manager-title">🔐 Owner Menu Editor</div>
-        <div class="menu-manager-sub">Changes save to this browser (localStorage). Edit <code>DEFAULT_MENU</code> in
-          index.html on GitHub for site-wide defaults.</div>
+        <div class="menu-manager-sub">Edits publish live for everyone. Click Save menu when you are done — visitors (including private/incognito) will see the update.</div>
         <div id="adminEditor"></div>
         <div class="manager-form" style="margin-top:1.5rem;grid-template-columns:1fr 2fr 100px auto auto;">
           <input type="text" id="newItemName" placeholder="New dish name...">
@@ -2813,7 +2812,8 @@
 
     // Islands in the Stream — menu data & admin (injected into index.html)
     const ADMIN_PASSWORD = 'islands2026';
-    const MENU_STORAGE_KEY = 'iits-menu-v1';
+    const MENU_API_URL = '/api/menu';
+    const MENU_STORAGE_KEY = 'iits-menu-v1'; // offline cache only
 
     const DEFAULT_MENU = [
       {
@@ -2927,17 +2927,45 @@
     let menuData = [];
     let adminUnlocked = false;
 
-    function loadMenu() {
-      try {
-        const saved = localStorage.getItem(MENU_STORAGE_KEY);
-        menuData = saved ? JSON.parse(saved) : JSON.parse(JSON.stringify(DEFAULT_MENU));
-      } catch {
-        menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
-      }
+    function cacheMenuLocally() {
+      try { localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuData)); } catch {}
     }
 
-    function saveMenu() {
-      localStorage.setItem(MENU_STORAGE_KEY, JSON.stringify(menuData));
+    async function loadMenu() {
+      try {
+        const res = await fetch(MENU_API_URL, { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('Invalid menu payload');
+        menuData = data;
+        cacheMenuLocally();
+        return;
+      } catch (err) {
+        console.warn('Live menu fetch failed, using fallback:', err);
+      }
+      try {
+        const saved = localStorage.getItem(MENU_STORAGE_KEY);
+        if (saved) {
+          menuData = JSON.parse(saved);
+          return;
+        }
+      } catch {}
+      menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
+    }
+
+    async function saveMenu() {
+      const res = await fetch(MENU_API_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        cache: 'no-store',
+        body: JSON.stringify({ password: ADMIN_PASSWORD, menu: menuData })
+      });
+      if (!res.ok) {
+        let detail = '';
+        try { detail = (await res.json()).error || ''; } catch {}
+        throw new Error(detail || ('Save failed (HTTP ' + res.status + ')'));
+      }
+      cacheMenuLocally();
     }
 
     function escapeHtml(s) {
@@ -2993,15 +3021,20 @@
       menuData[ci].items[ii][field] = value;
     }
 
-    function adminDeleteItem(ci, ii) {
-      if (confirm('Remove this item?')) {
-        menuData[ci].items.splice(ii, 1);
-        saveMenu();
+    async function adminDeleteItem(ci, ii) {
+      if (!confirm('Remove this item?')) return;
+      menuData[ci].items.splice(ii, 1);
+      try {
+        await saveMenu();
+        renderMenu();
+      } catch (err) {
+        alert('Could not save: ' + err.message);
+        await loadMenu();
         renderMenu();
       }
     }
 
-    function adminAddItem() {
+    async function adminAddItem() {
       const name = document.getElementById('newItemName').value.trim();
       const desc = document.getElementById('newItemDesc').value.trim();
       const price = document.getElementById('newItemPrice').value.trim();
@@ -3012,8 +3045,14 @@
       document.getElementById('newItemName').value = '';
       document.getElementById('newItemDesc').value = '';
       document.getElementById('newItemPrice').value = '';
-      saveMenu();
-      renderMenu();
+      try {
+        await saveMenu();
+        renderMenu();
+      } catch (err) {
+        alert('Could not save: ' + err.message);
+        await loadMenu();
+        renderMenu();
+      }
     }
 
     function hideAdminPanel() {
@@ -3027,20 +3066,28 @@
       if (overlay) overlay.classList.remove('show');
     }
 
-    function adminSaveAndRender() {
-      saveMenu();
+    async function adminSaveAndRender() {
+      try {
+        await saveMenu();
+      } catch (err) {
+        alert('Could not publish menu: ' + err.message);
+        return;
+      }
       hideAdminPanel();
-      alert('Menu saved! Opening the public site…');
+      alert('Menu published live! Opening the public site...');
       const url = new URL(window.location.href);
       url.searchParams.delete('admin');
       window.location.href = url.pathname + (url.search || '') + url.hash;
     }
 
-    function adminResetMenu() {
-      if (confirm('Reset menu to defaults? This clears your local edits.')) {
-        localStorage.removeItem(MENU_STORAGE_KEY);
-        menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
+    async function adminResetMenu() {
+      if (!confirm('Reset menu to defaults and publish live?')) return;
+      menuData = JSON.parse(JSON.stringify(DEFAULT_MENU));
+      try {
+        await saveMenu();
         renderMenu();
+      } catch (err) {
+        alert('Could not reset: ' + err.message);
       }
     }
 
@@ -3083,8 +3130,8 @@
       }
     }
 
-    loadMenu();
-    document.addEventListener('DOMContentLoaded', () => {
+    document.addEventListener('DOMContentLoaded', async () => {
+      await loadMenu();
       renderMenu();
       initAdmin();
     });
