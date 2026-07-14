@@ -47,6 +47,11 @@
         "price": "$7.99"
       },
       {
+        "name": "Mango Chili Meatballs",
+        "desc": "Four juicy tender 2oz meatballs tossed in our housemade mango habenero sauce",
+        "price": "$6.99"
+      },
+      {
         "name": "Mango Salsa & Chips",
         "desc": "Vibrant blend of juicy mango, pineapple, red onions, jalapeño and cilantro served with hot tortilla chips",
         "price": "$5.99"

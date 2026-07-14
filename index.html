@@ -2835,6 +2835,7 @@
           { name: 'Conch Fritters', desc: 'Five golden-fried fritters made from tender conch meat and spiced batter, served with a side of our Jamaican Me Crazy Sauce', price: '$6.99' },
           { name: 'Jerk Chicken Wings', desc: 'Eight savory and spicy chicken wings marinated in our signature jerk seasoning, served with our house made ranch dressing', price: '$9.99' },
           { name: 'Coconut Shrimp', desc: 'Five golden-fried shrimp battered in our johnny cake mixture and coated with shredded coconut, served with remoulade', price: '$7.99' },
+          { name: 'Mango Chili Meatballs', desc: 'Four juicy tender 2oz meatballs tossed in our housemade mango habenero sauce', price: '$6.99' },
           { name: 'Mango Salsa & Chips', desc: 'Vibrant blend of juicy mango, pineapple, red onions, jalapeño and cilantro served with hot tortilla chips', price: '$5.99' },
           { name: 'Jamaican Pork Twinkies', desc: 'Four sweet peppers stuffed with cream cheese, Caribbean pulled pork and wrapped in bacon then baked to perfection', price: '$8.99' },
           { name: 'Johnny Cakes', desc: 'Our fluffy house made dough mix deep fried and brushed with butter', price: '$3.99 (4) · $4.99 (6)' },
@@ -2944,6 +2945,17 @@
         console.warn('Live menu fetch failed, using fallback:', err);
       }
       try {
+        const localRes = await fetch('/menu.json?t=' + Date.now(), { cache: 'no-store' });
+        if (localRes.ok) {
+          const localData = await localRes.json();
+          if (Array.isArray(localData)) {
+            menuData = localData;
+            cacheMenuLocally();
+            return;
+          }
+        }
+      } catch {}
+      try {
         const saved = localStorage.getItem(MENU_STORAGE_KEY);
         if (saved) {
           menuData = JSON.parse(saved);
@@ -2963,7 +2975,7 @@
       if (!res.ok) {
         let detail = '';
         try { detail = (await res.json()).error || ''; } catch {}
-        throw new Error(detail || ('Save failed (HTTP ' + res.status + ')'));
+        throw new Error(detail || ('Publish failed (HTTP ' + res.status + '). Try again.'));
       }
       cacheMenuLocally();
     }
